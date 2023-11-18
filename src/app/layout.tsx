@@ -4,14 +4,15 @@ import LocalFont from "next/font/local";
 
 import "~/styles/globals.css";
 
+import React from "react";
+import { ClerkProvider } from "@clerk/nextjs";
+
 import { Analytics } from "~/components/analytics";
+import Navbar from "~/components/Navbar";
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
-import { ClerkProvider } from "@clerk/nextjs";
-import React from "react";
-import Navbar from "~/components/Navbar";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -69,7 +70,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider >
+    <ClerkProvider>
       <html lang="en">
         <body
           className={cn(
@@ -88,6 +89,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </body>
       </html>
     </ClerkProvider>
-
   );
 }
