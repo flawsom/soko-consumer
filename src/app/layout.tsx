@@ -9,8 +9,9 @@ import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
-import {ClerkProvider} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import React from "react";
+import Navbar from "~/components/Navbar";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -68,24 +69,25 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-      <ClerkProvider >
-        <html lang="en">
+    <ClerkProvider >
+      <html lang="en">
         <body
-            className={cn(
-                "min-h-screen bg-background font-sans antialiased",
-                fontSans.variable,
-                fontHeading.variable,
-            )}
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+            fontHeading.variable,
+          )}
         >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <TailwindIndicator />
-        </ThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            {children}
+            <TailwindIndicator />
+          </ThemeProvider>
 
-        <Analytics />
+          <Analytics />
         </body>
-        </html>
-      </ClerkProvider>
+      </html>
+    </ClerkProvider>
 
   );
 }
