@@ -1,14 +1,12 @@
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
+import { ClerkProvider } from "@clerk/nextjs";
 
 import "~/styles/globals.css";
 
-import React from "react";
-import { ClerkProvider } from "@clerk/nextjs";
-
 import { Analytics } from "~/components/analytics";
-import Navbar from "~/components/Navbar";
+import { Navbar } from "~/components/navbar";
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
 import { siteConfig } from "~/config/site";
@@ -70,15 +68,15 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-            fontHeading.variable,
-          )}
-        >
+    <html lang="en">
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable,
+        )}
+      >
+        <ClerkProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
             {children}
@@ -86,8 +84,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </ThemeProvider>
 
           <Analytics />
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }

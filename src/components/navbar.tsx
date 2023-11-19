@@ -18,7 +18,7 @@ class NavRoute {
   }
 }
 
-export default function Navbar({
+export function Navbar({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
