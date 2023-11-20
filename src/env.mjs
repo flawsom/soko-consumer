@@ -8,7 +8,9 @@ export const env = createEnv({
    */
   server: {
     CLERK_SECRET_KEY: z.string().optional(),
-    NODE_ENV: z.enum(["development", "test", "production"]),
+    NODE_ENV: z
+      .enum(["development", "test", "production"])
+      .default("development"),
   },
 
   /**
