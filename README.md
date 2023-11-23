@@ -1,28 +1,69 @@
-# Create T3 App
+# Soko
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+> Soko is a powerful ecommerce platform for seamless online store management and a secure, user-friendly shopping experience.
 
-## What's next? How do I make an app with this?
+## Table of Contents
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- [General Information](#general-information)
+- [Technologies Used](#technologies-used)
+- [Meta-Features](#meta-features)
+- [Quickstart](#quickstart)
+- [Project Status](#project-status)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## General Information
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Soko is an ecommerce platform that allows users to seamlessly create and manage an online store, and to provide shoppers with a secure and convenient buying experience.
+- It comprises two applications:
 
-## Learn More
+1. A [merchant](https://github.com/peterkibuchi/soko-merchant) web application for store and product management.
+2. A [consumer](https://github.com/peterkibuchi/soko-consumer) web application for browsing and purchasing various products.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Technologies Used
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- React 18
+- Next.js 14
+- Clerk Auth
+- Shadcn UI
+- Tailwind CSS
+- TypeScript
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Meta-Features
 
-## How do I deploy this?
+- Next.js `/app` dir
+- React Client and Server Components
+- Metadata configuration for improved SEO and web shareability
+- Data fetching and mutation with Tanstack React Query
+- Schema declarations and validations with Zod
+- Typesafe code and best practices made possible by TypeScript, ESLint and Prettier
+- Automated `format`, `lint` and `typecheck` CI steps with GitHub Actions
+- ... and much more
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Quickstart
+
+To run it locally, follow the steps below:
+
+1. Clone repository and install the dependencies:
+
+   ```bash
+   # Clone repository
+   git clone git@github.com:peterkibuchi/soko-consumer.git
+
+   # Install dependencies
+   pnpm i
+   ```
+
+2. Copy `.env.example` to `.env` and update the variables.
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+## Project Status
+
+Soko is currently: _in development_.
