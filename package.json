@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.5",
+    "@clerk/nextjs": "^4.29.6",
     "@t3-oss/env-nextjs": "^0.8.0",
     "@vercel/analytics": "^1.1.2",
     "class-variance-authority": "^0.7.0",
